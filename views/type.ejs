@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<title>TCCG Portal</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="img/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(img/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						TCCG Portal
+					</span>
+				</div>
+
+				<form class="login100-form validate-form" ng-submit="edit()" method="post" ng-controller="editController">
+					<div class="wrap-input100 validate-input m-b-26">
+                        <input type="radio" id="html" name="fav_language" value="Worker" onClick="window.location = '/signinworker';">
+                        <label for="html">Worker</label><br>
+                        <input type="radio" id="css" name="fav_language" value="Customer" onClick="window.location = '/signin';">
+                        <label for="css">Customer</label><br>
+                        <input type="radio" id="ad" name="fav_language" value="Admin" onClick="window.location = '/admin';">
+                        <label for="ad">Admin</label><br>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+<!--===============================================================================================-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<!-- <script src="vendor/animsition/js/animsition.min.js"></script> -->
+<!--===============================================================================================-->
+	<!-- <script src="vendor/bootstrap/js/popper.js"></script> -->
+	<script src="js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+
+     <script>
+ var app = angular.module('myapp', []); 
+         app.controller('editController', function ($scope, $http) { 
+ console.log( window.location.href)
+     var url_string=window.location.href;
+     var url = new URL(url_string);
+     var tid = url.searchParams.get("tid");
+     console.log(tid);
+ 
+          $scope.data = {}
+          $scope.utype = ['Complete','Incomplete'];
+          
+          
+
+
+$scope.choose = function(){  
+    //alert('Ohh. You like ' + $scope.data.utype);
+
+} 
+                    $scope.response = {}
+
+  $scope.edit = function(){
+           console.log($scope.data)
+var posting = $http({
+                    method: 'POST',
+                    url: '/edittask?tid='+tid,
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'},
+          data: $.param($scope.data),
+          processData: false
+                })
+                posting.then(function (response) {
+                    alert("Status updated");
+		             window.location.replace('/viewtask');
+
+                });
+        
+            }
+        });
+    </script>   
+      
+
+</body>
+</html>
