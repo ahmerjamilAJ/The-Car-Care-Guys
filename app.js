@@ -41,14 +41,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 
 
 // app.use(function(req,res,next){
-//   res.locals.connection=mysql.createConnection({
-//     host:'us-cdbr-east-04.cleardb.com',
-//     user:'b080989610da46',
-//     password:'eb1e0f74',
-//     database:'heroku_678b68b3c4ffbc5',
-//     connectTimeout: 30000,
-//     acquireTimeout: 30000,
-//     connectionLimit: 16000
+
 
 //   });
 //     res.locals.connection.connect(); 
