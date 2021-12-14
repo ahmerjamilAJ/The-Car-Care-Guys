@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en" ng-app="myapp" ng-controller="taskController"> 
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    <title>Workers</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
@@ -197,7 +197,7 @@
 					  
 						<li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link" href="/users">
+					        <a class="nav-link" href="/workers">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
@@ -255,144 +255,119 @@
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
 			    
-			    <h1 class="app-page-title">Overview</h1>
+			    <div class="row g-3 mb-4 align-items-center justify-content-between">
+				    <div class="col-auto">
+			            <h1 class="app-page-title mb-0">Workers</h1>
+				    </div>
+				    <div class="col-auto">
+					     <div class="page-utilities">
+						    <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+							    <div class="col-auto">
+								    <form class="table-search-form row gx-1 align-items-center">
+					                    <div class="col-auto">
+					                        <input type="text" id="search-orders" name="searchorders" class="form-control search-orders" placeholder="Search">
+					                    </div>
+					                    <div class="col-auto">
+					                        <button type="submit" class="btn app-btn-secondary">Search</button>
+					                    </div>
+					                </form>
+					                
+							    </div><!--//col-->
+							    
+							    
+						    </div><!--//row-->
+					    </div><!--//table-utilities-->
+				    </div><!--//col-auto-->
+			    </div><!--//row-->
+			   
 			    
-			    <div class="app-card alert alert-dismissible shadow-sm mb-4 border-left-decoration" role="alert">
-				    <div class="inner">
-					    <div class="app-card-body p-3 p-lg-4">
-						    <h3 class="mb-3">Welcome, Admin!</h3>
-						    <!-- <div class="row gx-5 gy-3">
-						        <div class="col-12 col-lg-9">
-							        
-							        <div>Portal is a free Bootstrap 5 admin dashboard template. The design is simple, clean and modular so it's a great base for building any modern web app.</div>
-							    </div>
-							    <div class="col-12 col-lg-3">
-								    <a class="btn app-btn-primary" href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-arrow-down me-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
-  <path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z"/>
-  <path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 10.293V6.5A.5.5 0 0 1 8 6z"/>
-</svg>Free Download</a>
-							    </div>
-						    </div> -->
-						    <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
-					    </div><!--//app-card-body-->
-					    
-				    </div><!--//inner-->
-			    </div><!--//app-card-->
-				    
-			    <div class="row g-4 mb-4">
-				    <div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">Total Sales</h4>
-							    <div class="stats-figure">$12,628</div>
-							    <div class="stats-meta text-success">
-								    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-</svg> 20%</div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
-				    
-				    <div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">Expenses</h4>
-							    <div class="stats-figure">$2,250</div>
-							    <div class="stats-meta text-success">
-								    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-</svg> 5% </div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
-				    <div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">Projects</h4>
-							    <div class="stats-figure">23</div>
-							    <div class="stats-meta">
-								    Open</div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
-				    <div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">Invoices</h4>
-							    <div class="stats-figure">6</div>
-							    <div class="stats-meta">New</div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
-			    </div><!--//row-->
-			    <div class="row g-4 mb-4">
-			        <div class="col-12 col-lg-6">
-				        <div class="app-card app-card-chart h-100 shadow-sm">
-					        <div class="app-card-header p-3">
-						        <div class="row justify-content-between align-items-center">
-							        <div class="col-auto">
-						                <h4 class="app-card-title">Line Chart </h4>
-							        </div><!--//col-->
-							        <div class="col-auto">
-								       
-							        </div><!--//col-->
-						        </div><!--//row-->
-					        </div><!--//app-card-header-->
-					        <div class="app-card-body p-3 p-lg-4">
-							    <div class="mb-3 d-flex">   
-							        <select class="form-select form-select-sm ms-auto d-inline-flex w-auto">
-									    <option value="1" selected>This week</option>
-									    <option value="2">Today</option>
-									    <option value="3">This Month</option>
-									    <option value="3">This Year</option>
-									</select>
-							    </div>
-						        <div class="chart-container">
-				                    <canvas id="canvas-linechart" ></canvas>
-						        </div>
-					        </div><!--//app-card-body-->
-				        </div><!--//app-card-->
-			        </div><!--//col-->
-			        <div class="col-12 col-lg-6">
-				        <div class="app-card app-card-chart h-100 shadow-sm">
-					        <div class="app-card-header p-3">
-						        <div class="row justify-content-between align-items-center">
-							        <div class="col-auto">
-						                <h4 class="app-card-title">Bar Chart </h4>
-							        </div><!--//col-->
-							        
-						        </div><!--//row-->
-					        </div><!--//app-card-header-->
-					        <div class="app-card-body p-3 p-lg-4">
-							    <div class="mb-3 d-flex">   
-							        <select class="form-select form-select-sm ms-auto d-inline-flex w-auto">
-									    <option value="1" selected>This week</option>
-									    <option value="2">Today</option>
-									    <option value="3">This Month</option>
-									    <option value="3">This Year</option>
-									</select>
-							    </div>
-						        <div class="chart-container">
-				                    <canvas id="canvas-barchart" ></canvas>
-						        </div>
-					        </div><!--//app-card-body-->
-				        </div><!--//app-card-->
-			        </div><!--//col-->
+			    <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
+				    <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
+				    </nav>
+				
+				<div class="tab-content" id="orders-table-tab-content">
+			        <div class="row">
+                        <div class="col-md-8">
+                          <div class="card">
+                            <div class="card-header card-header-primary">
+                              <h4 class="card-title">Add Worker</h4>
+                            </div>
+                            <div class="card-body">
+                              <form ng-submit="insert()" method="post" >
+                                <div class="row">
+                                 
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                          <label class="bmd-label-floating">Worker Id</label>
+                                          <input type="text" class="form-control" ng-model="id" disabled >
+                                        </div>
+                                      </div>
+
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label class="bmd-label-floating">Worker Name</label>
+                                      <input type="text" class="form-control" ng-model="name" ng-model="data.name" >
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label class="bmd-label-floating">Worker Email</label>
+                                      <input type="text" class="form-control"  ng-model="email" ng-model="data.email">
+                                    </div>
+                                  </div>
+            
+
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label class="bmd-label-floating">Worker Contact</label>
+                                      <input type="text" class="form-control"  ng-model="contact" ng-model="data.contact">
+                                    </div>
+                                  </div>
+            
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label class="bmd-label-floating">Worker Speciality</label>
+                                      <input type="text" class="form-control"  ng-model="speciality" ng-model="data.speciality">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label class="bmd-label-floating">Assigned Shift</label>
+                                      <input type="text" class="form-control"  ng-model="shift" ng-model="data.shift">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label class="bmd-label-floating">Worker GrossSalary</label>
+                                      <input type="text" class="form-control"  ng-model="salary" ng-model="data.salary">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label class="bmd-label-floating">Working Hours</label>
+                                      <input type="text" class="form-control"  ng-model="hours" ng-model="data.hours">
+                                    </div>
+                                  </div>
+
+                                </div>
+                               
+                               
+                                <button type="submit" class="btn btn-primary pull-right" ngClick="Submit">Submit</button>
+                                <div class="clearfix"></div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
 			        
-			    </div><!--//row-->
-			    <div class="row g-4 mb-4">
-				    <div class="col-12 col-lg-6">
-				        
-			        </div><!--//col-->
-			        <div class="col-12 col-lg-6">
-				        
-			        </div><!--//col-->
-			    </div><!--//row-->
+			        
+				</div><!--//tab-content-->
+				
+				
 			    
 		    </div><!--//container-fluid-->
 	    </div><!--//app-content-->
@@ -411,14 +386,80 @@
     <!-- Javascript -->          
     <script src="plugins/popper.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>  
-
-    <!-- Charts JS -->
-    <script src="plugins/chart.js/chart.min.js"></script> 
-    <script src="js/index-charts.js"></script> 
+    
     
     <!-- Page Specific JS -->
     <script src="js/app.js"></script> 
 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+<script>
+ var app = angular.module('myapp', []); 
+ app.controller('taskController', function ($scope, $http) { 
+     $scope.response={};
+     $scope.data={};
+
+     console.log( window.location.href)
+     var url_string=window.location.href;
+     var url = new URL(url_string);
+     var tid = url.searchParams.get("tid");
+     console.log(tid);
+
+$http({ method  : 'POST',
+                  url     : '/workers/getone',
+                  data: $.param({tid}),
+                  headers : {'Content-Type': 'application/x-www-form-urlencoded'},
+                }) .then(function(response) {
+                  console.log("response isssssss ",response)
+                  //$scope.names = response.data;
+                  $scope.id = response.data[0].WorkerId;
+                  $scope.name = response.data[0].Name;
+                  $scope.email = response.data[0].Email;
+                  $scope.contact = response.data[0].Contact;
+                  $scope.speciality = response.data[0].Speciality;
+                  $scope.shift = response.data[0].Shift;
+                  $scope.hours = response.data[0].WorkingHours;
+                  $scope.salary = response.data[0].GrossSalary;
+                  console.log("name" ,$scope.name )
+
+                  //$scope.data.id = $scope.id;
+                });
+
+    
+    $scope.insert = function(){
+         
+         console.log("scopp",$scope) 
+         $scope.data.id = $scope.id 
+         $scope.data.name = $scope.name 
+         $scope.data.contact = $scope.contact 
+         $scope.data.email = $scope.email
+         $scope.data.speciality = $scope.speciality
+         $scope.data.shift = $scope.shift
+         $scope.data.hours = $scope.hours
+         $scope.data.salary = $scope.salary
+
+         console.log("data",$scope.data)
+ var posting = $http({
+                     method: 'POST',
+                     url: '/workers/edit',
+                     headers : {'Content-Type': 'application/x-www-form-urlencoded'},
+                     data: $.param($scope.data),  
+                     processData: false
+                 })
+                 posting.then(function (response) {
+                     console.log(response.data)
+                         alert("Worker Edited Successfully");
+                         window.location.replace('/workers');
+ 
+                     
+                 });
+         
+             }
+});
+    </script>   
 </body>
 </html> 
 
