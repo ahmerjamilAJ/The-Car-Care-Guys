@@ -8,7 +8,10 @@ const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var signupRouter = require('./routes/signup');
+var signinRouter = require('./routes/signin');
+var adminsigninRouter = require('./routes/adminlogin');
+var signinworkerRouter = require('./routes/signinworker');
 var app = express();
 var mysql=require("mysql");
 
